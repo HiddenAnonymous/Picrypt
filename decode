@@ -1,0 +1,23 @@
+import base64
+#Colors:
+#Colors:
+G='\033[32m'
+B='\033[34m'
+W='\033[37m'
+Y='\033[33m'
+try:
+ name=input(B+"Image path: "+W)
+ file = open(name, 'rb')
+ encoded_data = file.read()
+ file.close()
+ decoded_data=base64.b64decode((encoded_data))
+
+ filename=input(B+"Output file name: "+W)
+ img_file = open(filename+".jpg", 'wb')
+ img_file.write(decoded_data)
+ img_file.close()
+ 
+except Exception:
+ print("\nEnter a valid file\n")
+except KeyboardInterrupt:
+ print("\nHave a nice day :)\n")
